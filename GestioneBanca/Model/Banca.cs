@@ -2,14 +2,13 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Banca
+namespace GestioneBanca.Model
 {
 	public class Banca
 	{
 		private string nome { get; set; } // nome della banca
 		private string indirizzo { get; set; } // indirizzo della banca
 		private string prossimoIban = ""; //prossimo iban
-		private string iban= ""; //iban generato casualmente
 
 
 
@@ -36,12 +35,12 @@ namespace Banca
         /// <returns></returns>
         public string GeneraIban()
 		{
+            Random rnd = new Random();
+            string iban = "";
             for (int i = 0; i < 27; i++)
             {
-				Random rnd = new Random();
 				int N = rnd.Next(0, 9);
 				iban += Convert.ToString(N);
-
 			}
 			return iban;
 		}
