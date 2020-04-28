@@ -11,18 +11,18 @@ using GestioneBanca.Model;
 
 namespace GestioneBanca
 {
-    public partial class Form1 : Form
+    public partial class Banca : Form
     {
         /// <summary>
-        /// banca su cui farò le operazioni...
+        /// banca su cui farò le operazioni..conti e bonifici..
         /// </summary>
-        private Banca banca = null;
-        public Form1()
+        private Model.Banca banca = null;
+        public Banca()
         {
             InitializeComponent();
 
             // inizializzo la banca su cui farò le operazioni di creazione conti e bonifici..
-            banca = new Banca("Banca Malatestiana", "Via Pinco Pallino, 22");
+            banca = new Model.Banca("Banca Malatestiana", "Via Pinco Pallino, 22");
         }
 
         private void aggiornaElencoCC()
@@ -47,12 +47,11 @@ namespace GestioneBanca
                 modal.ShowDialog();
                 if (modal.DialogResult == DialogResult.OK)
                 {
-                    // respond to confirm click here.
                     aggiornaElencoCC();
                 }
                 else if (modal.DialogResult == DialogResult.Cancel)
                 {
-                    // respond to cancel click here.
+
                 }
             }
         }
@@ -65,9 +64,7 @@ namespace GestioneBanca
             {
                 const string message = "Vuoi rimuovere il conto corrente selezionato?";
                 const string caption = "Form Closing";
-                var result = MessageBox.Show(message, caption,
-                                             MessageBoxButtons.YesNo,
-                                             MessageBoxIcon.Question);
+                var result = MessageBox.Show(message, caption, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (result == DialogResult.Yes)
                 {
@@ -95,12 +92,11 @@ namespace GestioneBanca
                     modal.ShowDialog();
                     if (modal.DialogResult == DialogResult.OK)
                     {
-                        // respond to confirm click here.
                         aggiornaElencoCC();
                     }
                     else if (modal.DialogResult == DialogResult.Cancel)
                     {
-                        // respond to cancel click here.
+
                     }
                 }
             }
@@ -123,12 +119,11 @@ namespace GestioneBanca
                     modal.ShowDialog();
                     if (modal.DialogResult == DialogResult.OK)
                     {
-                        // respond to confirm click here.
                         aggiornaElencoCC();
                     }
                     else if (modal.DialogResult == DialogResult.Cancel)
                     {
-                        // respond to cancel click here.
+
                     }
                 }
             }
@@ -151,12 +146,11 @@ namespace GestioneBanca
                     modal.ShowDialog();
                     if (modal.DialogResult == DialogResult.OK)
                     {
-                        // respond to confirm click here.
                         aggiornaElencoCC();
                     }
                     else if (modal.DialogResult == DialogResult.Cancel)
                     {
-                        // respond to cancel click here.
+
                     }
                 }
             }
@@ -179,12 +173,11 @@ namespace GestioneBanca
                     modal.ShowDialog();
                     if (modal.DialogResult == DialogResult.OK)
                     {
-                        // respond to confirm click here.
                         aggiornaElencoCC();
                     }
                     else if (modal.DialogResult == DialogResult.Cancel)
                     {
-                        // respond to cancel click here.
+
                     }
                 }
             }

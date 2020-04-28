@@ -17,7 +17,7 @@ namespace GestioneBanca
         /// <summary>
         /// banca su cui farò le operazioni...
         /// </summary>
-        private Banca banca = null;
+        private Model.Banca banca = null;
         private int nMovimenti = 0; // numero di movimenti sul conto corrente
         private int maxMovimenti= 50; // max movimenti sul conto corrente
         private double maxPrelievo = 250;
@@ -71,7 +71,7 @@ namespace GestioneBanca
         /// passo l'istanza della banca che utilizzerò per le operazioni 
         /// </summary>
         /// <param name="banca_"></param>
-        public void SetBanca(Banca banca_)
+        public void SetBanca(Model.Banca banca_)
         {
             banca = banca_;
         }

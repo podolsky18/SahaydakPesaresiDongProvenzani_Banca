@@ -7,7 +7,7 @@ namespace GestioneBanca.Model
     public class Movimento
     {
         protected DateTime data { get; set; } // data di quando è stato fatto il movimento
-        protected string Tipo { get; set; }
+        protected string Tipo { get; set; } // tipo del movimento (versamento, prelievo, bonifico...)
         protected double Importo { get; set; } // importo della transazione
 
         /// <summary>

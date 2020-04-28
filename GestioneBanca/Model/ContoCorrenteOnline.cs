@@ -9,7 +9,7 @@ namespace GestioneBanca.Model
         private double maxPrelievo { get; set; } // prelievo massimo dal conto corrente 
 
 		/// <summary>
-		/// costruttore
+		/// costruttore della classe
 		/// </summary>
 		/// <param name="maxPrelievo_"></param>
 		/// <param name="saldo_"></param>

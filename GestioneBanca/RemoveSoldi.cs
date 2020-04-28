@@ -13,7 +13,7 @@ namespace GestioneBanca
 {
     public partial class RemoveSoldi : Form
     {
-        private Banca banca = null;
+        private Model.Banca banca = null;
         private string iban = "";
         public RemoveSoldi()
         {
@@ -24,7 +24,7 @@ namespace GestioneBanca
         /// passo l'istanza della banca che utilizzerò per le operazioni 
         /// </summary>
         /// <param name="banca_"></param>
-        public void SetBanca(Banca banca_)
+        public void SetBanca(Model.Banca banca_)
         {
             banca = banca_;
         }

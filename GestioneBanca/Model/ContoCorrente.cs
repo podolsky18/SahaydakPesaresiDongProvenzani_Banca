@@ -9,14 +9,18 @@ namespace GestioneBanca.Model
         protected double saldo { get; set; } = 0; // saldo del conto corrente
         protected int nMovimenti { get; set; } = 0; // numero di movimenti sul conto corrente
         protected int maxMovimenti { get; set; } = 50; // max movimenti sul conto corrente
-        public string iban { get; set; }
-        public double Tassa { get; set; }
+        public string iban { get; set; } // iban
+        public double Tassa { get; set; } // tassa che viene applicata su ogni movimento (solo quando nMovimenti > 50)
+
 		protected Intestatario intestatario = null;
 
-        protected List<Movimento> elencoMovimenti = new List<Movimento>();
+        /// <summary>
+        /// // lista dei movimenti
+        /// </summary>
+        protected List<Movimento> elencoMovimenti = new List<Movimento>(); 
 
         /// <summary>
-        /// costruttore
+        /// costruttore della classe
         /// </summary>
         /// <param name="saldo_"></param>
         /// <param name="nMovimenti_"></param>

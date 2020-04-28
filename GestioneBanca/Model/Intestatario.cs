@@ -12,7 +12,7 @@ namespace GestioneBanca.Model
 		private string email { get; set; } // e-mail dell'intestatario
 
 		/// <summary>
-		/// costruttore
+		/// costruttore della classe
 		/// </summary>
 		/// <param name="nomeCompleto_"></param>
 		/// <param name="dataNascita_"></param>

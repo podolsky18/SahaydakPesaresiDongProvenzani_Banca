@@ -8,9 +8,8 @@ namespace GestioneBanca.Model
 	{
 		private string nome { get; set; } // nome della banca
 		private string indirizzo { get; set; } // indirizzo della banca
+
 		private string prossimoIban = ""; //prossimo iban
-
-
 
         /// <summary>
         /// lista di conti correnti della banca
@@ -18,7 +17,7 @@ namespace GestioneBanca.Model
         private List<ContoCorrente> elencoContiCorrenti = new List<ContoCorrente>();
 
         /// <summary>
-        /// costruttore
+        /// costruttore della classe
         /// </summary>
         /// <param name="nome_"></param>
         /// <param name="indirizzo_"></param>
@@ -26,7 +25,6 @@ namespace GestioneBanca.Model
         {
             nome = nome_;
             indirizzo = indirizzo_;
-
         }
 
         /// <summary>
@@ -44,9 +42,7 @@ namespace GestioneBanca.Model
 			}
 			return iban;
 		}
-
-        
-
+       
 		/// <summary>
 		/// aggiunge un conto corrente nella banca, assegnando il numero di conto corrente valido
 		/// </summary>
@@ -64,7 +60,7 @@ namespace GestioneBanca.Model
         }
 
         /// <summary>
-        /// funzione per rimuovere un conto corrente dalla banca
+        /// rimuove un conto corrente dalla banca
         /// </summary>
         /// <param name="iban_"></param>
         /// <returns>torna true se è stato cancellato oppure false</returns>
@@ -82,7 +78,7 @@ namespace GestioneBanca.Model
         }
 
         /// <summary>
-        /// funzione per prendere un conto corrente esistente dalla banca
+        /// prende un conto corrente esistente dalla banca
         /// </summary>
         /// <param name="iban_"></param>
         /// <returns>torna il conto corrente se esiste oppure null</returns>

@@ -1,6 +1,6 @@
 ﻿namespace GestioneBanca
 {
-    partial class Form1
+    partial class Banca
     {
         /// <summary>
         /// Variabile di progettazione necessaria.
@@ -50,7 +50,7 @@
             this.AddCC.Name = "AddCC";
             this.AddCC.Size = new System.Drawing.Size(132, 61);
             this.AddCC.TabIndex = 0;
-            this.AddCC.Text = "AddCC";
+            this.AddCC.Text = "Crea CC";
             this.AddCC.UseVisualStyleBackColor = true;
             this.AddCC.Click += new System.EventHandler(this.Button1_Click);
             // 
@@ -60,7 +60,7 @@
             this.removeCC.Name = "removeCC";
             this.removeCC.Size = new System.Drawing.Size(132, 64);
             this.removeCC.TabIndex = 1;
-            this.removeCC.Text = "RemoveCC";
+            this.removeCC.Text = "Cancella CC";
             this.removeCC.UseVisualStyleBackColor = true;
             this.removeCC.Click += new System.EventHandler(this.Button2_Click);
             // 
@@ -145,12 +145,12 @@
             // Iban
             // 
             this.Iban.Text = "Iban";
-            this.Iban.Width = 110;
+            this.Iban.Width = 167;
             // 
             // Intestazione
             // 
             this.Intestazione.Text = "Intestazione";
-            this.Intestazione.Width = 150;
+            this.Intestazione.Width = 170;
             // 
             // label1
             // 
@@ -161,18 +161,18 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Elenco CC";
             // 
-            // Form1
+            // Banca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(625, 450);
+            this.ClientSize = new System.Drawing.Size(573, 450);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listCC);
             this.Controls.Add(this.btnBonifico);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Name = "Form1";
-            this.Text = "Banca";
+            this.Name = "Banca";
+            this.Text = "Gestione Banca";
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
