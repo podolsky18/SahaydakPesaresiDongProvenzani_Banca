@@ -12,17 +12,17 @@ using GestioneBanca.Model;
 namespace GestioneBanca
 {
 
-    public partial class addCC : Form
+    /// <summary>
+    /// creo un dialogo che mi permette di creare un conto corrente sulla banca
+    /// </summary>
+    public partial class CreaCC : Form
     {
         /// <summary>
-        /// banca su cui farò le operazioni...
+        /// banca su cui farò le operazioni..
         /// </summary>
         private Model.Banca banca = null;
-        private int nMovimenti = 0; // numero di movimenti sul conto corrente
-        private int maxMovimenti= 50; // max movimenti sul conto corrente
-        private double maxPrelievo = 250;
 
-        public addCC()
+        public CreaCC()
         {
             InitializeComponent();
             // inizializzo il valore del credito iniziale a 0
@@ -38,26 +38,35 @@ namespace GestioneBanca
             var indirizzo = txtIndirizzo.Text;
             var creditoIniziale = txtCreditoIniziale.Text;
 
+            // controllo che le credenziali siano valide
             if (nome.Length > 0 && cognome.Length > 0)
             {
                 ContoCorrente cc = null;
 
+                // controllo il tipo di conto corrente che si vuole creare
                 if (cbContoCorrenteOnline.Checked)
                 {
-                    cc = new ContoCorrenteOnline(maxPrelievo, 0, nMovimenti, maxMovimenti);
+                    // creo il conto  corrente con un valore iniziale di saldo uguale a 0
+                    cc = new ContoCorrenteOnline(ParametriApplicazione.maxPrelievoOnline, 0, ParametriApplicazione.maxMovimenti);
                 }
                 else
                 {
-                    cc = new ContoCorrente(0, nMovimenti, maxMovimenti);
+                    // creo il conto  corrente con un valore iniziale di saldo uguale a 0
+                    cc = new ContoCorrente(0, ParametriApplicazione.maxMovimenti);
                 }
+                // creo dati anagrafici del soggetto 
                 Intestatario soggetto = new Intestatario(string.Format("{0} {1}", cognome, nome), dataNascita, indirizzo, email);
+                // assegno i dati anagrafici al conto corrente 
                 cc.SetIntestatario(soggetto);
+                // aggiunge alla banca il conto corrente
                 banca.Add(cc);
+                // se il credito iniziale è maggiore di 0, allora effettuo un versamento con il valore del credito iniziale
                 if (Convert.ToDouble(creditoIniziale) > 0)
                 {
+                    // effettuo il versamento del credito iniziale
                     cc.Versamento(Convert.ToDouble(creditoIniziale));
                 }
-               
+               // esco dal dialogo assegnando il result ad ok
                 DialogResult = DialogResult.OK;
                 Close();
             }

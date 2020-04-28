@@ -1,6 +1,6 @@
 ﻿namespace GestioneBanca
 {
-    partial class AddSoldi
+    partial class Versamento
     {
         /// <summary>
         /// Required designer variable.
@@ -51,24 +51,24 @@
             // 
             // btnAggiungiSoldi
             // 
-            this.btnAggiungiSoldi.Location = new System.Drawing.Point(269, 4);
+            this.btnAggiungiSoldi.Location = new System.Drawing.Point(15, 34);
             this.btnAggiungiSoldi.Name = "btnAggiungiSoldi";
-            this.btnAggiungiSoldi.Size = new System.Drawing.Size(75, 23);
+            this.btnAggiungiSoldi.Size = new System.Drawing.Size(329, 29);
             this.btnAggiungiSoldi.TabIndex = 2;
             this.btnAggiungiSoldi.Text = "Aggiungi";
             this.btnAggiungiSoldi.UseVisualStyleBackColor = true;
             this.btnAggiungiSoldi.Click += new System.EventHandler(this.BtnAggiungiSoldi_Click);
             // 
-            // AddSoldi
+            // Versamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(356, 33);
+            this.ClientSize = new System.Drawing.Size(356, 68);
             this.Controls.Add(this.btnAggiungiSoldi);
             this.Controls.Add(this.txtCredito);
             this.Controls.Add(this.label1);
-            this.Name = "AddSoldi";
-            this.Text = "AddSoldi";
+            this.Name = "Versamento";
+            this.Text = "Versamento";
             this.ResumeLayout(false);
             this.PerformLayout();
 

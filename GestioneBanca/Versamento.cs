@@ -11,9 +11,12 @@ using GestioneBanca.Model;
 
 namespace GestioneBanca
 {
-    public partial class AddSoldi : Form
+    /// <summary>
+    /// versamento
+    /// </summary>
+    public partial class Versamento : Form
     {
-        public AddSoldi()
+        public Versamento()
         {
             InitializeComponent();
         }
@@ -34,15 +37,24 @@ namespace GestioneBanca
             iban = iban_;
         }
 
+        /// <summary>
+        /// aggiungo soldi sul conto corrente
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnAggiungiSoldi_Click(object sender, EventArgs e)
         {
-            var credito = txtCredito.Text;
+            // prendo l'importo dell'operazione
+            var importo = Convert.ToDouble(txtCredito.Text);
 
-            if (credito.Length > 0)
+            // se l'importo è maggiore di 0 effettuo l'operazione
+            if (importo > 0)
             {
-                var cr = Convert.ToDouble(credito);
+                // prendo tramite l'iban il conto corrente su cui effettuare l'operazione
                 var cc = banca.Get(iban);
-                cc.Versamento(cr);
+                // effettuo il versamento
+                cc.Versamento(importo);
+                // chiudo il dialogo
                 DialogResult = DialogResult.OK;
                 Close();
             }

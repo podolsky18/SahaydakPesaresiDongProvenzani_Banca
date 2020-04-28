@@ -93,7 +93,7 @@
             this.btnSaldo.Name = "btnSaldo";
             this.btnSaldo.Size = new System.Drawing.Size(132, 30);
             this.btnSaldo.TabIndex = 7;
-            this.btnSaldo.Text = "Saldo";
+            this.btnSaldo.Text = "Stato";
             this.btnSaldo.UseVisualStyleBackColor = true;
             this.btnSaldo.Click += new System.EventHandler(this.BtnSaldo_Click);
             // 

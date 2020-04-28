@@ -6,7 +6,7 @@ namespace GestioneBanca.Model
 {
 	public class Banca
 	{
-		private string nome { get; set; } // nome della banca
+        private string nome { get; set; } // nome della banca
 		private string indirizzo { get; set; } // indirizzo della banca
 
 		private string prossimoIban = ""; //prossimo iban

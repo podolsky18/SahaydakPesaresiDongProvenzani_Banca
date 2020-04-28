@@ -35,10 +35,19 @@ namespace GestioneBanca
             iban = iban_;
         }
 
+        /// <summary>
+        /// ha il caricamento del dialogo, viene generato l'evento load che utilizzo per inizializzare le componenti del dialogo
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void StatoCC_Load(object sender, EventArgs e)
         {
+            // trovo tramite iban il conto corrente su cui voglio effettuare la visualizzazione dello stato
+            // come già scritto in altri commenti iban è selezionato da una listview per cui non può essere sbagliato
             cc = banca.Get(iban);
+            // visualizzo il saldo del conto corrente
             lblSaldo.Text = cc.Saldo().ToString();
+            // aggiorno l'elenco
             aggiornaElencoCC();
         }
 
@@ -47,12 +56,20 @@ namespace GestioneBanca
         /// </summary>
         private void aggiornaElencoCC()
         {
+            // prende i movimenti del conto corrente
             var movimenti = cc.GetMovimenti();
+            // azzerra la listview
             listMovimenti.Items.Clear();
+
+            // scorre i movimenti del conto corrente
             foreach (var movimento in movimenti)
             {
                 // prendo il tipo e l'importo dal movimento e lo aggiungo alla listview
-                var item2 = new ListViewItem(new[] { movimento.GetData().ToShortDateString() +" "+ movimento.GetData().ToShortTimeString(), movimento.GetTipo(), movimento.GetImporto().ToString()});
+                var item2 = new ListViewItem(new[] {
+                    movimento.GetData().ToShortDateString() +" "+ movimento.GetData().ToShortTimeString(),
+                    movimento.GetTipo(),
+                    movimento.GetImporto().ToString()
+                });
                 listMovimenti.Items.Add(item2);
             }
         }

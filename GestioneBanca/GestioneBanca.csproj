@@ -46,17 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="addCC.cs">
+    <Compile Include="CreaCC.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="addCC.Designer.cs">
-      <DependentUpon>addCC.cs</DependentUpon>
+    <Compile Include="CreaCC.Designer.cs">
+      <DependentUpon>CreaCC.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddSoldi.cs">
+    <Compile Include="Model\ParametriApplicazione.cs" />
+    <Compile Include="Versamento.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddSoldi.Designer.cs">
-      <DependentUpon>AddSoldi.cs</DependentUpon>
+    <Compile Include="Versamento.Designer.cs">
+      <DependentUpon>Versamento.cs</DependentUpon>
     </Compile>
     <Compile Include="Bonifico.cs">
       <SubType>Form</SubType>
@@ -80,17 +81,11 @@
     <Compile Include="Model\Versamento.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="removeCC.cs">
+    <Compile Include="Prelievo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="removeCC.Designer.cs">
-      <DependentUpon>removeCC.cs</DependentUpon>
-    </Compile>
-    <Compile Include="RemoveSoldi.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="RemoveSoldi.Designer.cs">
-      <DependentUpon>RemoveSoldi.cs</DependentUpon>
+    <Compile Include="Prelievo.Designer.cs">
+      <DependentUpon>Prelievo.cs</DependentUpon>
     </Compile>
     <Compile Include="StatoCC.cs">
       <SubType>Form</SubType>
@@ -98,11 +93,11 @@
     <Compile Include="StatoCC.Designer.cs">
       <DependentUpon>StatoCC.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="addCC.resx">
-      <DependentUpon>addCC.cs</DependentUpon>
+    <EmbeddedResource Include="CreaCC.resx">
+      <DependentUpon>CreaCC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddSoldi.resx">
-      <DependentUpon>AddSoldi.cs</DependentUpon>
+    <EmbeddedResource Include="Versamento.resx">
+      <DependentUpon>Versamento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Bonifico.resx">
       <DependentUpon>Bonifico.cs</DependentUpon>
@@ -119,11 +114,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="removeCC.resx">
-      <DependentUpon>removeCC.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RemoveSoldi.resx">
-      <DependentUpon>RemoveSoldi.cs</DependentUpon>
+    <EmbeddedResource Include="Prelievo.resx">
+      <DependentUpon>Prelievo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StatoCC.resx">
       <DependentUpon>StatoCC.cs</DependentUpon>

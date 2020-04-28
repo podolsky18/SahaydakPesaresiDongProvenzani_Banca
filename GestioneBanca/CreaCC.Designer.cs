@@ -1,6 +1,6 @@
 ﻿namespace GestioneBanca
 {
-    partial class addCC
+    partial class CreaCC
     {
         /// <summary>
         /// Required designer variable.
@@ -46,21 +46,21 @@
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(12, 85);
+            this.txtNome.Location = new System.Drawing.Point(12, 44);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(100, 20);
             this.txtNome.TabIndex = 0;
             // 
             // txtCognome
             // 
-            this.txtCognome.Location = new System.Drawing.Point(12, 123);
+            this.txtCognome.Location = new System.Drawing.Point(12, 82);
             this.txtCognome.Name = "txtCognome";
             this.txtCognome.Size = new System.Drawing.Size(100, 20);
             this.txtCognome.TabIndex = 1;
             // 
             // txtCreditoIniziale
             // 
-            this.txtCreditoIniziale.Location = new System.Drawing.Point(12, 268);
+            this.txtCreditoIniziale.Location = new System.Drawing.Point(12, 227);
             this.txtCreditoIniziale.Name = "txtCreditoIniziale";
             this.txtCreditoIniziale.Size = new System.Drawing.Size(100, 20);
             this.txtCreditoIniziale.TabIndex = 3;
@@ -68,7 +68,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(128, 88);
+            this.label1.Location = new System.Drawing.Point(128, 47);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 7;
@@ -77,7 +77,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(128, 126);
+            this.label2.Location = new System.Drawing.Point(128, 85);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 13);
             this.label2.TabIndex = 8;
@@ -86,7 +86,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(124, 271);
+            this.label4.Location = new System.Drawing.Point(124, 230);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(74, 13);
             this.label4.TabIndex = 10;
@@ -94,9 +94,9 @@
             // 
             // btnCreaCC
             // 
-            this.btnCreaCC.Location = new System.Drawing.Point(12, 305);
+            this.btnCreaCC.Location = new System.Drawing.Point(12, 264);
             this.btnCreaCC.Name = "btnCreaCC";
-            this.btnCreaCC.Size = new System.Drawing.Size(100, 42);
+            this.btnCreaCC.Size = new System.Drawing.Size(291, 32);
             this.btnCreaCC.TabIndex = 11;
             this.btnCreaCC.Text = "Crea CC";
             this.btnCreaCC.UseVisualStyleBackColor = true;
@@ -105,7 +105,7 @@
             // cbContoCorrenteOnline
             // 
             this.cbContoCorrenteOnline.AutoSize = true;
-            this.cbContoCorrenteOnline.Location = new System.Drawing.Point(12, 38);
+            this.cbContoCorrenteOnline.Location = new System.Drawing.Point(12, 12);
             this.cbContoCorrenteOnline.Name = "cbContoCorrenteOnline";
             this.cbContoCorrenteOnline.Size = new System.Drawing.Size(135, 17);
             this.cbContoCorrenteOnline.TabIndex = 12;
@@ -114,7 +114,7 @@
             // 
             // dtpDataNascita
             // 
-            this.dtpDataNascita.Location = new System.Drawing.Point(12, 161);
+            this.dtpDataNascita.Location = new System.Drawing.Point(12, 120);
             this.dtpDataNascita.Name = "dtpDataNascita";
             this.dtpDataNascita.Size = new System.Drawing.Size(200, 20);
             this.dtpDataNascita.TabIndex = 14;
@@ -122,7 +122,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(218, 167);
+            this.label5.Location = new System.Drawing.Point(218, 126);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(78, 13);
             this.label5.TabIndex = 15;
@@ -130,14 +130,14 @@
             // 
             // txtIndirizzo
             // 
-            this.txtIndirizzo.Location = new System.Drawing.Point(12, 197);
+            this.txtIndirizzo.Location = new System.Drawing.Point(12, 156);
             this.txtIndirizzo.Name = "txtIndirizzo";
             this.txtIndirizzo.Size = new System.Drawing.Size(100, 20);
             this.txtIndirizzo.TabIndex = 16;
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(12, 232);
+            this.txtEmail.Location = new System.Drawing.Point(12, 191);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(100, 20);
             this.txtEmail.TabIndex = 17;
@@ -145,7 +145,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(124, 200);
+            this.label6.Location = new System.Drawing.Point(124, 159);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(45, 13);
             this.label6.TabIndex = 18;
@@ -154,17 +154,17 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(124, 232);
+            this.label3.Location = new System.Drawing.Point(124, 191);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(35, 13);
             this.label3.TabIndex = 19;
             this.label3.Text = "E-mail";
             // 
-            // addCC
+            // CreaCC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(315, 365);
+            this.ClientSize = new System.Drawing.Size(315, 302);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtEmail);
@@ -179,8 +179,8 @@
             this.Controls.Add(this.txtCreditoIniziale);
             this.Controls.Add(this.txtCognome);
             this.Controls.Add(this.txtNome);
-            this.Name = "addCC";
-            this.Text = "addCC";
+            this.Name = "CreaCC";
+            this.Text = "Crea conto corrente";
             this.ResumeLayout(false);
             this.PerformLayout();
 

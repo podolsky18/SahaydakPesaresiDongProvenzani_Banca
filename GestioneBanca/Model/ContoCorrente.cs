@@ -10,7 +10,8 @@ namespace GestioneBanca.Model
         protected int nMovimenti { get; set; } = 0; // numero di movimenti sul conto corrente
         protected int maxMovimenti { get; set; } = 50; // max movimenti sul conto corrente
         public string iban { get; set; } // iban
-        public double Tassa { get; set; } // tassa che viene applicata su ogni movimento (solo quando nMovimenti > 50)
+        
+        protected bool online = false; // indica che il conto corrente è di tipo online
 
 		protected Intestatario intestatario = null;
 
@@ -23,14 +24,11 @@ namespace GestioneBanca.Model
         /// costruttore della classe
         /// </summary>
         /// <param name="saldo_"></param>
-        /// <param name="nMovimenti_"></param>
         /// <param name="maxMovimenti_"></param>
-        public ContoCorrente(double saldo_, int nMovimenti_, int maxMovimenti_)
+        public ContoCorrente(double saldo_, int maxMovimenti_)
         {
             saldo = saldo_;
-            nMovimenti = nMovimenti_;
             maxMovimenti = maxMovimenti_;
-            Tassa = 0.5;
         }
 
         /// <summary>
@@ -82,9 +80,18 @@ namespace GestioneBanca.Model
             saldo -= sommaDaPrelevare;
             nMovimenti++;
 
+            // se il numero dei movimenti supera maxMovimenti applico un costo all'applicazione
             if (nMovimenti > maxMovimenti)
             {
-                saldo -= Tassa;
+                // applico il costo dell'operazione in base al tipo del conto corrente
+                if (online)
+                {
+                    saldo -= ParametriApplicazione.CostoOperazioneOnline;
+                }
+                else
+                {
+                    saldo -= ParametriApplicazione.CostoOperazione;
+                }
             }
             return sommaDaPrelevare;
         }
@@ -102,9 +109,18 @@ namespace GestioneBanca.Model
             saldo += sommaDaVersare;
             nMovimenti++;
 
+            // se il numero dei movimenti supera maxMovimenti applico un costo all'applicazione
             if (nMovimenti > maxMovimenti)
             {
-                saldo -= Tassa;
+                // applico il costo dell'operazione in base al tipo del conto corrente
+                if (online)
+                {
+                    saldo -= ParametriApplicazione.CostoOperazioneOnline;
+                }
+                else
+                {
+                    saldo -= ParametriApplicazione.CostoOperazione;
+                }
             }
             return sommaDaVersare;
         }
