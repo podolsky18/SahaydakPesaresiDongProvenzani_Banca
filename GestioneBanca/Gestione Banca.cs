@@ -249,5 +249,59 @@ namespace GestioneBanca
                 }
             }
         }
+
+        private void BtnListaVersamenti_Click(object sender, EventArgs e)
+        {
+            // prendo la selezione attiva nella listview 
+            var items = listCC.SelectedItems;
+
+            // se vi è una selezione attiva, proseguo
+            if (items.Count > 0)
+            {
+                // istanzio la form
+                using (var modal = new ListaVersamentiCC())
+                {
+                    // estraggo iban dalla selezione corrente della listview
+                    var iban = items[0].SubItems[0].Text;
+                    // passo l'istanza della banca
+                    modal.SetBanca(banca);
+                    modal.SetIban(iban);
+                    // chiamo la form
+                    modal.ShowDialog();
+
+                    // se non vi sono errori aggiorno l'elenco
+                    if (modal.DialogResult == DialogResult.OK)
+                    {
+                        aggiornaElencoCC();
+                    }
+                    else if (modal.DialogResult == DialogResult.Cancel)
+                    {
+
+                    }
+                }
+            }
+        }
+
+        private void Button1_Click_1(object sender, EventArgs e)
+        {
+            // istanzio la form
+            using (var modal = new ListaVersamentiBanca())
+            {
+                // passo l'istanza della banca
+                modal.SetBanca(banca);
+                // chiamo la form
+                modal.ShowDialog();
+
+                // se non vi sono errori aggiorno l'elenco
+                if (modal.DialogResult == DialogResult.OK)
+                {
+                    aggiornaElencoCC();
+                }
+                else if (modal.DialogResult == DialogResult.Cancel)
+                {
+
+                }
+            }
+        }
     }
 }

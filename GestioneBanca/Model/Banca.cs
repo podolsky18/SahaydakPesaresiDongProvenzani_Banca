@@ -15,7 +15,7 @@ namespace GestioneBanca.Model
         /// lista di conti correnti della banca
         /// </summary>
         private List<ContoCorrente> elencoContiCorrenti = new List<ContoCorrente>();
-
+        
         /// <summary>
         /// costruttore della classe
         /// </summary>

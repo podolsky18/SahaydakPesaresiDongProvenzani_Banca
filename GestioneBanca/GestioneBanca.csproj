@@ -52,7 +52,19 @@
     <Compile Include="CreaCC.Designer.cs">
       <DependentUpon>CreaCC.cs</DependentUpon>
     </Compile>
+    <Compile Include="ListaVersamentiBanca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListaVersamentiBanca.Designer.cs">
+      <DependentUpon>ListaVersamentiBanca.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\ParametriApplicazione.cs" />
+    <Compile Include="ListaVersamentiCC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListaVersamentiCC.Designer.cs">
+      <DependentUpon>ListaVersamentiCC.cs</DependentUpon>
+    </Compile>
     <Compile Include="Versamento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +107,12 @@
     </Compile>
     <EmbeddedResource Include="CreaCC.resx">
       <DependentUpon>CreaCC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaVersamentiBanca.resx">
+      <DependentUpon>ListaVersamentiBanca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaVersamentiCC.resx">
+      <DependentUpon>ListaVersamentiCC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Versamento.resx">
       <DependentUpon>Versamento.cs</DependentUpon>

@@ -10,15 +10,20 @@ namespace GestioneBanca.Model
         protected int nMovimenti { get; set; } = 0; // numero di movimenti sul conto corrente
         protected int maxMovimenti { get; set; } = 50; // max movimenti sul conto corrente
         public string iban { get; set; } // iban
-        
+
         protected bool online = false; // indica che il conto corrente è di tipo online
 
-		protected Intestatario intestatario = null;
+        protected Intestatario intestatario = null;
 
         /// <summary>
         /// // lista dei movimenti
         /// </summary>
-        protected List<Movimento> elencoMovimenti = new List<Movimento>(); 
+        protected List<Movimento> elencoMovimenti = new List<Movimento>();
+
+        /// <summary>
+        /// elenco dei movimenti giornalieri 
+        /// </summary>
+        private Dictionary<string, List<Movimento>> elencoMovimentiPerData = new Dictionary<string, List<Movimento>>();
 
         /// <summary>
         /// costruttore della classe
@@ -50,6 +55,15 @@ namespace GestioneBanca.Model
         }
 
         /// <summary>
+        /// ritorta l'elenco dei movimenti raggruppati per data
+        /// </summary>
+        /// <returns></returns>
+        public Dictionary<string, List<Movimento>> GetMovimentiPerData()
+        {
+            return elencoMovimentiPerData;
+        }
+
+        /// <summary>
         /// assegno l'intestaraio del conto corrente
         /// </summary>
         /// <param name="intestatario_"></param>
@@ -74,8 +88,34 @@ namespace GestioneBanca.Model
         /// <returns>somma prelevata</returns>
         public virtual double Prelievo(double sommaDaPrelevare)
         {
+            // creo il prelievo
+            var prelievo = new Prelievo(DateTime.Now, sommaDaPrelevare);
+
             // registro il prelievo effettuato
-            elencoMovimenti.Add(new Prelievo(DateTime.Now, sommaDaPrelevare));
+            elencoMovimenti.Add(prelievo);
+
+            // verifico se nell'elenco movimentiPerData è già stata inserita 
+            // una data corrispondente alla data del movimento che devo inserire
+            if (elencoMovimentiPerData.ContainsKey(prelievo.GetData().ToShortDateString()))
+            {
+                List<Movimento> items;
+
+                // recupera l'elenco dei movimenti per quella data 
+                if (elencoMovimentiPerData.TryGetValue(prelievo.GetData().ToShortDateString(), out items))
+                {
+                    // aggiunge il nuovo movimento 
+                    items.Add(prelievo);
+                }
+            }
+            else
+            {
+                // creo un elenco movimenti nuovo
+                var items = new List<Movimento>();
+                // aggiungo il movimento
+                items.Add(prelievo);
+                // aggiungo all'elenco movimentiPerData l'elenco movimento associandolo alla data
+                elencoMovimentiPerData.Add(prelievo.GetData().ToShortDateString(), items);
+            }
 
             saldo -= sommaDaPrelevare;
             nMovimenti++;
@@ -103,8 +143,33 @@ namespace GestioneBanca.Model
         /// <returns>somma versata</returns>
         public double Versamento(double sommaDaVersare)
         {
+            var versamento = new Versamento(DateTime.Now, sommaDaVersare);
+
             // registro il versamento effettuato
-            elencoMovimenti.Add(new Versamento(DateTime.Now, sommaDaVersare));
+            elencoMovimenti.Add(versamento);
+
+            // verifico se nell'elenco movimentiPerData è già stata inserita 
+            // una data corrispondente alla data del movimento che devo inserire
+            if (elencoMovimentiPerData.ContainsKey(versamento.GetData().ToShortDateString()))
+            {
+                List<Movimento> items;
+
+                // recupera l'elenco dei movimenti per quella data 
+                if (elencoMovimentiPerData.TryGetValue(versamento.GetData().ToShortDateString(), out items))
+                {
+                    // aggiunge il nuovo movimento 
+                    items.Add(versamento);
+                }
+            }
+            else
+            {
+                // creo un elenco movimenti nuovo
+                var items = new List<Movimento>();
+                // aggiungo il movimento
+                items.Add(versamento);
+                // aggiungo all'elenco movimentiPerData l'elenco movimento associandolo alla data
+                elencoMovimentiPerData.Add(versamento.GetData().ToShortDateString(), items);
+            }
 
             saldo += sommaDaVersare;
             nMovimenti++;
